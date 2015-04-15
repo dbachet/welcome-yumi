@@ -1,8 +1,8 @@
 <div class="row">
-  <h1 class="text-center">La poussette Peg Perego book plus 51 trio</h1>
+  <h1 class="text-center">{{name}}</h1>
   <div class="col-md-12">
-    <p class="lead">PRIX: 679 €</p>
-    <p class="lead">Donations reçues: 0 €</p>
+    <p class="lead">PRIX: {{price}} €</p>
+    <p class="lead">Donations reçues: {{receivedDonations}} €</p>
   </div>
 
   <div class="col-md-12">
@@ -11,7 +11,7 @@
   </div>
 
   <div class="col-md-12">
-    {{stripe-button description=description amountInEuros=amountInEuros}}
+    {{stripe-button description=description amountInEuros=amountInEuros shortName=shortName}}
   </div>
 
   {{yield}}

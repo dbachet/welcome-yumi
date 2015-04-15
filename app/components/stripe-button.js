@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   type: "button",
   description: "",
   amountInEuros: null,
+  shortName: "",
 
   amountInCents: function() {
     return this.get("amountInEuros") * 100;
