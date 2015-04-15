@@ -1,0 +1,45 @@
+header {
+  /*background-color: #00ff98;*/
+  /*background-color: #fafd7a;*/
+  background-color: #f9bd01;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.parallax-window {
+  background: transparent;
+}
+
+#photo-1 .parallax-window { min-height: 1000px }
+
+#photo-2 .parallax-window { min-height: 1000px }
+
+#photo-3 .parallax-window { min-height: 1000px }
+
+#photo-4 .parallax-window { min-height: 1000px }
+
+#text-1 {
+  background-color: #f769b4;
+  color: #2b284a;
+}
+
+#text-2 {
+  background-color: #7da3f0;
+  color: #fff;
+}
+
+#text-3 {
+  background-color: #00ff98;
+  color: #f2af77;
+}
+
+#text-4, footer {
+  background-color: #f9bd01;
+  color: #000;
+}
+
+.text-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  p { margin: 30px }
+}
