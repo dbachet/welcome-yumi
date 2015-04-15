@@ -1,0 +1,18 @@
+<div class="row">
+  <h1 class="text-center">La poussette Peg Perego book plus 51 trio</h1>
+  <div class="col-md-12">
+    <p class="lead">PRIX: 679 €</p>
+    <p class="lead">Donations reçues: 0 €</p>
+  </div>
+
+  <div class="col-md-12">
+    {{input value=amountInEuros}}
+    <span class="glyphicon glyphicon-eur"></span>
+  </div>
+
+  <div class="col-md-12">
+    {{stripe-button description=description amountInEuros=amountInEuros}}
+  </div>
+
+  {{yield}}
+</div>

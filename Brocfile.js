@@ -29,4 +29,6 @@ app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 
 app.import('bower_components/parallax/parallax.min.js');
 
+app.import('bower_components/stripe/checkout.js');
+
 module.exports = app.toTree();
