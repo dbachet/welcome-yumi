@@ -20,7 +20,8 @@ export default Ember.Component.extend({
 
   handler: function() {
     return StripeCheckout.configure({
-      key: 'pk_test_QUIN6n5t6j64jmvJb68n4Llw',
+      // test key = 'pk_test_QUIN6n5t6j64jmvJb68n4Llw'
+      key: "pk_live_yj8Q1zaUElF1OuYQhmkdJRtH",
       image: 'https://s3.eu-central-1.amazonaws.com/welcome-yumi/assets/images/small-logo.png',
       token: function(token) {
         // Use the token to create the charge with a server-side script.
