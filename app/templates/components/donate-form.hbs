@@ -7,11 +7,16 @@
 
   <div class="col-md-12">
     {{input value=amountInEuros}}
+    {{#if hasErrors}}
+      <div class="errors">{{errors}}</div>
+    {{/if}}
     <span class="glyphicon glyphicon-eur"></span>
   </div>
 
   <div class="col-md-12">
-    {{stripe-button description=description amountInEuros=amountInEuros shortName=shortName}}
+    <button type="button" class="donate-button btn-block" {{action 'clickButton'}}>
+      Je veux participer à l'achat de {{shortName}}
+    </button>
   </div>
 
   {{yield}}
