@@ -13,9 +13,9 @@ header {
 
 #photo-2 .parallax-window { min-height: 500px }
 
-#photo-3 .parallax-window { min-height: 500px }
+#photo-3 .parallax-window { min-height: 800px }
 
-#photo-4 .parallax-window { min-height: 500px }
+#photo-4 .parallax-window { min-height: 800px }
 
 #text-1 {
   background-color: #f769b4;
@@ -46,7 +46,7 @@ header {
 
 .donate {
   position: absolute;
-  top: 50px;
+  top: 150px;
   background-color: rgba(0,0,0,0.7);
   color: #fff;
   padding: 35px;
@@ -92,6 +92,21 @@ header {
     top: 13px;
     font-size: 1.8em;
   }
+  .other-payment-link {
+    margin: 5px 0;
+    font-size: 0.8em;
+    text-align: center;
+  }
+  .stripe-description,
+  .gandi-description{
+    margin: 5px 0;
+    text-align: center;
+    color: darkgrey;
+    font-size: 0.7em;
+    .stripe-logo,
+    .gandi-logo { width: 30px }
+  }
+
 }
 section#photo-3,
 section#photo-4 {

@@ -75,6 +75,9 @@ export default Ember.Component.extend({
         amount: this.get("amountInCents"),
         allowRememberMe: false
       });
+    },
+    showOtherPaymentFacilities: function() {
+      this.$(".online-payment").css("opacity", 0);
     }
   }
 });

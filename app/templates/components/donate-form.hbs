@@ -5,6 +5,7 @@
     <p class="lead">Donations reçues: {{receivedDonations}} €</p>
   </div>
 
+
   <div class="col-md-12">
     {{input value=amountInEuros}}
     {{#if hasErrors}}
@@ -15,8 +16,22 @@
 
   <div class="col-md-12">
     <button type="button" class="donate-button btn-block" {{action 'clickButton'}}>
-      Je veux participer à l'achat de {{shortName}}
+      Je veux participer à l'achat de {{shortName}}＊
     </button>
+  </div>
+
+  <div class="col-md-12 other-payment-link">
+    ＊Vous préférez nous envoyer un chèque ou effectuer un virement ? <a href="mailto:dbachet@gmail.com">Ecrivez-nous </a> et nous vous ferons parvenir nos coordonnées
+  </div>
+
+  <div class="col-md-12 stripe-description">
+    Le paiement est effectué via le service en ligne <a href="http://stripe.com"><img class="stripe-logo" src="https://stripe.com/img/navigation/logo-white@2x.png?1"></a>
+  </div>
+
+  <div class="col-md-12 gandi-description">
+    Ce site utilise une connexion sécurisée SSL.
+    <br>
+    <a href="https://www.gandi.net/ssl/secured/welcome-yumi.info/154115/b9f065bfa5">Plus d'informations sur le certificat <img class="gandi-logo" src="https://www.gandi.net/static/images/ssl/GANDI_SSL_logo_B_std_en.png"></a>
   </div>
 
   {{yield}}
