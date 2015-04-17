@@ -29,7 +29,8 @@ export default Ember.Component.extend({
       name: 'Welcome Yumi',
       description: this.get("description"),
       currency: "eur",
-      amount: this.get("amountInCents")
+      amount: this.get("amountInCents"),
+      allowRememberMe: false
     });
     e.preventDefault();
   }
