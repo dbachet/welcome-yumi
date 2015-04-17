@@ -16,7 +16,7 @@ export default Ember.Component.extend({
   handler: function() {
     return StripeCheckout.configure({
       key: 'pk_test_QUIN6n5t6j64jmvJb68n4Llw',
-      image: '/img/documentation/checkout/marketplace.png',
+      image: 'https://s3.eu-central-1.amazonaws.com/welcome-yumi/assets/images/small-logo.png',
       token: function(token) {
         // Use the token to create the charge with a server-side script.
         // You can access the token ID with `token.id`
