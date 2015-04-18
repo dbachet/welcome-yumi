@@ -17,6 +17,8 @@ header {
 
 #photo-4 .parallax-window { min-height: 800px }
 
+#photo-5 .parallax-window { min-height: 800px }
+
 #text-1 {
   background-color: #f769b4;
   color: #2b284a;
@@ -32,7 +34,7 @@ header {
   color: #f2af77;
 }
 
-#text-4, footer {
+#text-4 {
   background-color: #f9bd01;
   color: #000;
 }
@@ -121,4 +123,14 @@ section#photo-3 button{
 section#photo-4 button{
   background-color: #c8f860;
   color: #000;
+}
+
+section#photo-5 {
+  position: relative;
+  .footer {
+    position: absolute;
+    bottom: 0;
+    background-color: transparent;
+    color: #fff;
+  }
 }
