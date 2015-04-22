@@ -5,33 +5,67 @@
     <p class="lead">Donations reçues: {{receivedDonations}} €</p>
   </div>
 
+  <div class="payment">
+    <div class="col-md-12">
+      {{input value=amountInEuros}}
+      {{#if hasErrors}}
+        <div class="errors">{{errors}}</div>
+      {{/if}}
+      <span class="glyphicon glyphicon-eur"></span>
+    </div>
 
-  <div class="col-md-12">
-    {{input value=amountInEuros}}
-    {{#if hasErrors}}
-      <div class="errors">{{errors}}</div>
+    <div class="col-md-12">
+      <button type="button" class="donate-button btn-block" {{action 'clickButton'}}>
+        Je veux participer à l'achat de {{shortName}}＊
+      </button>
+    </div>
+
+    <div class="col-md-12 other-payment-link">
+      ＊Vous préférez nous envoyer un chèque ou effectuer un virement ? <a href="mailto:dbachet@gmail.com">Ecrivez-nous </a> et nous vous ferons parvenir nos coordonnées
+    </div>
+
+    <div class="col-md-12 stripe-description">
+      Le paiement est effectué via le service en ligne <a href="http://stripe.com"><img class="stripe-logo" src="https://stripe.com/img/navigation/logo-white@2x.png?1"></a>
+    </div>
+
+    <div class="col-md-12 gandi-description">
+      Ce site utilise une connexion sécurisée SSL.
+      <br>
+      <a href="https://www.gandi.net/ssl/secured/welcome-yumi.info/154115/b9f065bfa5">Plus d'informations sur le certificat <img class="gandi-logo" src="https://www.gandi.net/static/images/ssl/GANDI_SSL_logo_B_std_en.png"></a>
+    </div>
+  </div>
+
+  <div class="after-form-submission">
+
+    {{#if performingPayment}}
+      <div class="processing-payment col-md-12 text-center">
+        <div class="row">
+          <div class="col-md-1 col-md-offset-6 text-center">
+            <div id="payment-loading">
+              <div id="blockG_1" class="payment-loading-block">
+              </div>
+              <div id="blockG_2" class="payment-loading-block">
+              </div>
+              <div id="blockG_3" class="payment-loading-block">
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        Traitement du paiement en cours...
+      </div>
     {{/if}}
-    <span class="glyphicon glyphicon-eur"></span>
-  </div>
 
-  <div class="col-md-12">
-    <button type="button" class="donate-button btn-block" {{action 'clickButton'}}>
-      Je veux participer à l'achat de {{shortName}}＊
-    </button>
-  </div>
+    <div class="payment-success col-md-12 alert alert-success" role="alert">
+      Paiement effectué avec succès. Vous allez recevoir un email avec un reçu pour votre donation. MERCI :)
+    </div>
 
-  <div class="col-md-12 other-payment-link">
-    ＊Vous préférez nous envoyer un chèque ou effectuer un virement ? <a href="mailto:dbachet@gmail.com">Ecrivez-nous </a> et nous vous ferons parvenir nos coordonnées
-  </div>
-
-  <div class="col-md-12 stripe-description">
-    Le paiement est effectué via le service en ligne <a href="http://stripe.com"><img class="stripe-logo" src="https://stripe.com/img/navigation/logo-white@2x.png?1"></a>
-  </div>
-
-  <div class="col-md-12 gandi-description">
-    Ce site utilise une connexion sécurisée SSL.
-    <br>
-    <a href="https://www.gandi.net/ssl/secured/welcome-yumi.info/154115/b9f065bfa5">Plus d'informations sur le certificat <img class="gandi-logo" src="https://www.gandi.net/static/images/ssl/GANDI_SSL_logo_B_std_en.png"></a>
+    <div class="payment-error col-md-12 alert alert-danger" role="alert">
+      Le paiement n'a pas pu être effectué pour la raison suivante:<br>
+      {{paymentError}}<br>
+      Veuillez nous contacter si vous avez besoin d'aide.
+      <a href="mailto:dbachet@gmail.com?subject={{paymentError}}">Cliquer ici pour nous écrire </a>
+    </div>
   </div>
 
   {{yield}}
