@@ -27,7 +27,7 @@ export default Ember.Component.extend({
     return StripeCheckout.configure({
       // test key = 'pk_test_QUIN6n5t6j64jmvJb68n4Llw'
       // live key = 'pk_live_yj8Q1zaUElF1OuYQhmkdJRtH'
-      key: "pk_test_QUIN6n5t6j64jmvJb68n4Llw",
+      key: "pk_live_yj8Q1zaUElF1OuYQhmkdJRtH",
       image: 'https://s3.eu-central-1.amazonaws.com/welcome-yumi/assets/images/small-logo.png',
       token: function(token) {
         self.send("actionAfterStripeSubmission", self, token);
