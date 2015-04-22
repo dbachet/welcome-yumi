@@ -13,19 +13,30 @@ export default Ember.Component.extend({
   errors: null,
   formatError: "Le montant n'est pas valide. Entrer uniquement des nombres et séparer les centimes par un \".\" (ex: 5.50)",
   minimumAmountError: "Le montant minimum est de 1 €",
+  store: null,
 
   amountInCents: function() {
     return this.get("amountInEuros") * 100;
   }.property("amountInEuros"),
 
   handler: function() {
+    var self = this;
     return StripeCheckout.configure({
       // test key = 'pk_test_QUIN6n5t6j64jmvJb68n4Llw'
-      key: "pk_live_yj8Q1zaUElF1OuYQhmkdJRtH",
+      // live key = 'pk_live_yj8Q1zaUElF1OuYQhmkdJRtH'
+      key: "pk_test_QUIN6n5t6j64jmvJb68n4Llw",
       image: 'https://s3.eu-central-1.amazonaws.com/welcome-yumi/assets/images/small-logo.png',
       token: function(token) {
-        // Use the token to create the charge with a server-side script.
-        // You can access the token ID with `token.id`
+        console.log(token);
+        var charge = self.store.createRecord('charge', {
+          tokenId: token.id,
+          createdAt: token.created,
+          email: token.email,
+          livemode: token.livemode,
+          verificationAllowed: token.verification_allowed
+        });
+
+        charge.save();
       }
     });
   }.property(''),
