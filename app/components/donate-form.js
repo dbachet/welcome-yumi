@@ -1,4 +1,5 @@
 import Ember from 'ember';
+/* global StripeCheckout */
 
 export default Ember.Component.extend({
   tagName: "div",
@@ -22,18 +23,21 @@ export default Ember.Component.extend({
     return this.get("amountInEuros") * 100;
   }.property("amountInEuros"),
 
-  handler: function() {
+  handler: null,
+
+  setupStripe: Ember.on('init', function() {
     var self = this;
-    return StripeCheckout.configure({
+    var handler = StripeCheckout.configure({
       // test key = 'pk_test_QUIN6n5t6j64jmvJb68n4Llw'
-      // live key = 'pk_live_yj8Q1zaUElF1OuYQhmkdJRtH'
-      key: "pk_live_yj8Q1zaUElF1OuYQhmkdJRtH",
+      // live key = 'pk_live_wBo2NAGwMfXR3tLM6mSolukV'
+      key: "pk_test_QUIN6n5t6j64jmvJb68n4Llw",
       image: 'https://s3.eu-central-1.amazonaws.com/welcome-yumi/assets/images/small-logo.png',
       token: function(token) {
         self.send("actionAfterStripeSubmission", self, token);
       }
     });
-  }.property(''),
+    this.set('handler', handler);
+  }),
 
   actions: {
     clickButton: function() {
